@@ -1,0 +1,45 @@
+/* The .navBar class styles the navigation bar at the top of the page. */
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5vw;
+    width: 100%;
+    color: #2B2B2B;
+    background: #FDFDFD;
+    border-bottom: 0.01em solid #a9a9a9;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    font-size: 1vw;
+    z-index: 99;
+}
+
+/* classes style the individual navigation links. */
+.navBar .name, .navBar .home, .navBar .about, .navBar .shop, .navBar .contact {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 0 3%;
+}
+
+/* classes style the paragraphs within the navigation links. */
+.navBar .name p, .navBar .home p, .navBar .about p, .navBar .shop p, .navBar .contact p {
+    margin: 0;
+    align-self: center;
+    cursor: pointer;
+}
+
+/* The .right-content class styles the checkout button of the navigation bar. */
+.right-content {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* The .navBar img class styles the images within the navigation bar. */
+.navBar img {
+    order: 2;
+    height: 75%;
+    cursor: pointer;
+}
