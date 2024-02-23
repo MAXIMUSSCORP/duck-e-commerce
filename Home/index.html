@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Duck e-commerce</title>
+</head>
+<link href="index.css" rel="stylesheet">
+<link href="content.css" rel="stylesheet">
+<link href="footer.css" rel="stylesheet">
+<!-- EXTERNAL LINKS -->
+<script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+<body style="background-color: #F0F0F0; margin: 0;">
+<div class="navBar">
+    <div class="name">
+        <h1>DUCK STORE</h1>
+    </div>
+    <!--TODO redirect-->
+    <div class="home" onclick="window.location.href = 'resume.html'">
+        <p>HOME</p>
+    </div>
+    <!--TODO redirect-->
+    <div class="about">
+        <p>ABOUT</p>
+    </div>
+    <!--TODO redirect-->
+    <div class="shop"
+         onclick="">
+        <p>SHOP</p>
+    </div>
+    <div class="contact">
+        <p>CONTACT</p>
+    </div>
+    <div class="right-content">
+        <p id="checkout" style="opacity: 0; transition: opacity 1s ease;">Checkout?</p>
+        <img alt="checkout"
+             onmouseenter="TAppear('checkout')"
+             onmouseleave="TDisappear('checkout')"
+             src="https://img.icons8.com/carbon-copy/100/2B2B2B/checkout.png"/>
+    </div>
+</div>
+<div>
+    <div class="containerSlider">
+        <div> <img src="https://imgur.com/UwzFx76.png" alt="image1"> </div>
+        <div> <img src="https://imgur.com/Ibn6ucs.png" alt="image2"> </div>
+        <div> <img src="https://imgur.com/rGA9i2r.png" alt="image3"> </div>
+        <div> <img src="https://imgur.com/DtJG5cg.png" alt="image4"> </div>
+    </div>
+</div>
+<div class="categories">
+    <div id="lowClass">
+        <img src="https://imgur.com/g4TSd9J.png" alt="lowClass">
+        <p>Bronze</p>
+    </div>
+    <div id="midClass">
+        <img src="https://imgur.com/pcDvLfJ.png" alt="midClass">
+        <p>Silver</p>
+    </div>
+    <div id="highClass">
+        <img src="https://imgur.com/eWYyf8F.png" alt="highClass">
+        <p>Gold</p>
+    </div>
+</div>
+<div id="containerDucks">
+    <!-- JS rendered code -->
+</div>
+
+<footer>
+    <section>
+        <article>
+            <h3>online store</h3>
+            <p>limited edition duckys</p>
+            <p>original set duckys</p>
+            <p>partnered set duckys</p>
+        </article>
+        <article>
+            <h3>helpful links</h3>
+            <p>home</p>
+            <p>about</p>
+            <p>shop</p>
+            <p>contact</p>
+        </article>
+        <article>
+            <h3>address</h3>
+            <p>Trash Can</p>
+            <p>street address</p>
+            <p>NS + 1 (123) 134 4321</p>
+            <p>canada</p>
+        </article>
+    </section>
+    <p id="credit"><a href="https://github.com/MAXIMUSSCORP/">© Mohammad Zaid Khan</a></p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="index.js"></script>
+<script src="content.js"></script>
+</body>
+</html>
