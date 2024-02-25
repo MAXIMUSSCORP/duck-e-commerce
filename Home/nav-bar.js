@@ -18,8 +18,10 @@ function TDisappear(elementId) {
 function checkoutCounter() {
     console.log("checkoutCounter");
     let count
-    if (document.cookie.indexOf(",counter=") >= 0) {
-        count = Number(document.cookie.split(',')[1].split('=')[1]);
+    if (localStorage.getItem('counter') !== null) {
+        count = parseInt(localStorage.getItem('counter'), 10);
+    } else {
+        count = 0;
     }
     console.log("count: " + count);
     let checkout = document.getElementById("count");

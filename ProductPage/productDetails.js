@@ -51,20 +51,18 @@ function dynamicContentDetails(ob)
     productPreviewDiv.appendChild(h3ProductPreviewDiv)
 
     let i;
-    for(i=0; i<ob.productImages.length; i++)
-    {
-        let imgTagProductPreviewDiv = document.createElement('img')
-        imgTagProductPreviewDiv.id = 'previewImg'
-        imgTagProductPreviewDiv.src = ob.productImages[i]
-        imgTagProductPreviewDiv.onclick = function()
-        {
-            console.log("clicked" + this.src)
-            imgTag.src = ob.productImages[i]
-            document.getElementById("imgDetails").src = this.src
-
-        }
-        productPreviewDiv.appendChild(imgTagProductPreviewDiv)
+    for (let i = 0; i < ob.productImages.length; i++) {
+        let imgTagProductPreviewDiv = document.createElement('img');
+        imgTagProductPreviewDiv.id = 'previewImg' + i; // Make IDs unique
+        imgTagProductPreviewDiv.src = ob.productImages[i];
+        imgTagProductPreviewDiv.onclick = (function(imageSrc) {
+            return function() {
+                document.getElementById("imgDetails").src = imageSrc;
+            };
+        })(ob.productImages[i]);
+        productPreviewDiv.appendChild(imgTagProductPreviewDiv);
     }
+
 
     let buttonDiv = document.createElement('div')
     buttonDiv.id = 'button'
@@ -72,19 +70,25 @@ function dynamicContentDetails(ob)
     let buttonTag = document.createElement('button')
     buttonDiv.appendChild(buttonTag)
 
-
     if (ob.category !== "limited") {
         buttonText = document.createTextNode('Add to Cart')
-        buttonTag.onclick = function () {
-            let order = id + " "
-            let counter = 1
-            if (document.cookie.indexOf(',counter=') >= 0) {
-                order = id + " " + document.cookie.split(',')[0].split('=')[1]
-                counter = Number(document.cookie.split(',')[1].split('=')[1]) + 1
+        buttonTag.onclick = function() {
+            let order = localStorage.getItem('orderId');
+            let counter = parseInt(localStorage.getItem('counter'), 10) || 0;
+
+            if (order) {
+                order += " " + id;
+            } else {
+                order = id;
             }
-            document.cookie = "orderId=" + order + ",counter=" + counter
-            console.log(document.cookie)
-        }
+            counter += 1;
+
+            localStorage.setItem('orderId', order);
+            localStorage.setItem('counter', counter.toString());
+            console.log('Order ID:', order, 'Counter:', counter);
+            location.reload();
+        };
+
     } else {
         buttonText = document.createTextNode('Out of Stock')
         buttonTag.disabled = true
@@ -130,8 +134,6 @@ httpRequest.onreadystatechange = function() {
         }
     }
 };
-
-//wait for DOM to load
 
 
 document.addEventListener('DOMContentLoaded', getQueryParam);

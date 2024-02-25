@@ -40,12 +40,6 @@
     transition: 0.5s;
 }
 
-h1
-{
-    font-size: 35px;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-}
 #productPreview
 {
     padding-bottom: 10px;
@@ -57,13 +51,7 @@ h1
     border-radius: 15px;
     cursor: pointer;
 }
-p
-{
-    font-size: 15px;
-    word-spacing: 2px;
-    letter-spacing: 1px;
-    line-height: 25px;
-}
+
 button
 {
     padding: 10px 15px;
@@ -92,10 +80,6 @@ button a:focus
 
 @media(max-width: 1300px)
 {
-    h1
-    {
-        font-size: 28px;
-    }
     #productPreview > img
     {
         width: 40px;
@@ -104,7 +88,7 @@ button a:focus
     button
     {
         padding: 8px 13px;
-        background-color: rgb(3, 122, 122);
+        background-color: rgb(234, 166, 20);
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -113,31 +97,15 @@ button a:focus
 
 @media(max-width: 1170px)
 {
-    h1
-    {
-        font-size: 22px;
-    }
     #productPreview > img
     {
         width: 40px;
         padding: 10px 10px 30px;
     }
-    button a
-    {
-        font-size: 15px;
-
-    }
-
-    h3
-    {
-        font-size: 15px;
-    }
-
 }
 
 @media(max-width: 900px)
 {
-    /* #containerProduct */
     #containerD
     {
         width: 60%;

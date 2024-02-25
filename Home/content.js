@@ -8,7 +8,7 @@
 function dynamicDucksSection(ob) {
 
     let boxLink = document.createElement("a");
-    boxLink.href = "/duck-e-commerce/ProductPage/productDetails.html?" + ob.id;
+    boxLink.href = "../ProductPage/productDetails.html?" + ob.id;
 
     let boxDiv = document.createElement("div");
     boxDiv.id = "box";
