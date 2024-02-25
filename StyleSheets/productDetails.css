@@ -99,8 +99,7 @@ button a:focus
     #productPreview > img
     {
         width: 40px;
-        padding: 10px 10px;
-        padding-bottom: 30px;
+        padding: 10px 10px 30px;
     }
     button
     {
@@ -121,18 +120,14 @@ button a:focus
     #productPreview > img
     {
         width: 40px;
-        padding: 10px 10px;
-        padding-bottom: 30px;
+        padding: 10px 10px 30px;
     }
     button a
     {
         font-size: 15px;
 
     }
-    h4, p
-    {
-        font-size: 13px;
-    }
+
     h3
     {
         font-size: 15px;

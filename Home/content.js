@@ -57,10 +57,12 @@ httpRequest.onreadystatechange = function() {
                 document.getElementById("badge").innerHTML = document.cookie.split(",")[1].split("=")[1];
             }
             for (let i = 0; i < contentTitle.length; i++) {
+                if (contentTitle[i].category === "regular") {
                     console.log(contentTitle[i]);
                     containerDucks.appendChild(
                         dynamicDucksSection(contentTitle[i])
                     );
+                }
             }
         } else {
             console.log("call failed!");

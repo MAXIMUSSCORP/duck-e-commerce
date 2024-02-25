@@ -15,11 +15,10 @@
 
 <body style="background-color: #F0F0F0; margin: 0;">
 <div class="navBar">
-    <div class="name">
+    <div class="name" onclick="window.location.href = 'index.html'">
         <h1>DUCK STORE</h1>
     </div>
-    <!--TODO redirect-->
-    <div class="home" onclick="window.location.href = 'resume.html'">
+    <div class="home" onclick="window.location.href = 'index.html'">
         <p>HOME</p>
     </div>
     <!--TODO redirect-->
@@ -39,7 +38,7 @@
         <img alt="checkout"
              onmouseenter="TAppear('checkout')"
              onmouseleave="TDisappear('checkout')"
-             src="https://img.icons8.com/carbon-copy/100/2B2B2B/checkout.png"/>
+             src="https://img.icons8.com/ios-glyphs/128/000000/checkout.png"/>
     </div>
 </div>
 <div>
@@ -50,18 +49,22 @@
         <div> <img src="https://imgur.com/DtJG5cg.png" alt="image4"> </div>
     </div>
 </div>
+<h4>Limited Edition Duckies</h4>
 <div class="categories">
     <div id="lowClass">
-        <img src="https://imgur.com/g4TSd9J.png" alt="lowClass">
-        <p>Bronze</p>
+        <img src="https://imgur.com/g4TSd9J.png" alt="lowClass"
+             onclick="window.location.href = '/duck-e-commerce/ProductPage/productDetails.html?8'">
+        <p>BRONZE</p>
     </div>
     <div id="midClass">
-        <img src="https://imgur.com/pcDvLfJ.png" alt="midClass">
-        <p>Silver</p>
+        <img src="https://imgur.com/pcDvLfJ.png" alt="midClass"
+             onclick="window.location.href = '/duck-e-commerce/ProductPage/productDetails.html?7'">
+        <p>SILVER</p>
     </div>
     <div id="highClass">
-        <img src="https://imgur.com/eWYyf8F.png" alt="highClass">
-        <p>Gold</p>
+        <img src="https://imgur.com/eWYyf8F.png" alt="highClass"
+             onclick="window.location.href = '/duck-e-commerce/ProductPage/productDetails.html?6'">
+        <p>GOLD</p>
     </div>
 </div>
 <div id="containerDucks">
@@ -96,5 +99,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script src="index.js"></script>
 <script src="content.js"></script>
+<script src="nav-bar.js"></script>
 </body>
 </html>

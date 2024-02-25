@@ -1,7 +1,6 @@
 let id;
 function getQueryParam() {
     id = new URL(window.location.href).search.substring(1);
-    console.log(id);
 }
 
 function dynamicContentDetails(ob)
@@ -57,7 +56,7 @@ function dynamicContentDetails(ob)
         let imgTagProductPreviewDiv = document.createElement('img')
         imgTagProductPreviewDiv.id = 'previewImg'
         imgTagProductPreviewDiv.src = ob.productImages[i]
-        imgTagProductPreviewDiv.onclick = function(event)
+        imgTagProductPreviewDiv.onclick = function()
         {
             console.log("clicked" + this.src)
             imgTag.src = ob.productImages[i]
@@ -73,23 +72,27 @@ function dynamicContentDetails(ob)
     let buttonTag = document.createElement('button')
     buttonDiv.appendChild(buttonTag)
 
-    buttonText = document.createTextNode('Add to Cart')
-    buttonTag.onclick  =   function()
-    {
-        let order = id+" "
-        let counter = 1
-        if(document.cookie.indexOf(',counter=')>=0)
-        {
-            order = id + " " + document.cookie.split(',')[0].split('=')[1]
-            counter = Number(document.cookie.split(',')[1].split('=')[1]) + 1
+
+    if (ob.category !== "limited") {
+        buttonText = document.createTextNode('Add to Cart')
+        buttonTag.onclick = function () {
+            let order = id + " "
+            let counter = 1
+            if (document.cookie.indexOf(',counter=') >= 0) {
+                order = id + " " + document.cookie.split(',')[0].split('=')[1]
+                counter = Number(document.cookie.split(',')[1].split('=')[1]) + 1
+            }
+            document.cookie = "orderId=" + order + ",counter=" + counter
+            console.log(document.cookie)
         }
-        document.cookie = "orderId=" + order + ",counter=" + counter
-        console.log(document.cookie)
+    } else {
+        buttonText = document.createTextNode('Out of Stock')
+        buttonTag.disabled = true
+        buttonTag.style.backgroundColor = "grey"
     }
     buttonTag.appendChild(buttonText)
 
 
-    console.log(mainContainer.appendChild(imageSectionDiv));
     mainContainer.appendChild(imageSectionDiv)
     mainContainer.appendChild(productDetailsDiv)
     productDetailsDiv.appendChild(h1)

@@ -8,13 +8,13 @@
 <link href="../StyleSheets/nav-bar.css" rel="stylesheet">
 <link href="../StyleSheets/productDetails.css" rel="stylesheet">
 <link href="../StyleSheets/footer.css" rel="stylesheet">
-<body>
+<body onload="checkoutCounter()">
 <div class="navBar">
-    <div class="name">
+    <div class="name" onclick="window.location.href = '../Home/index.html'">
         <h1>DUCK STORE</h1>
     </div>
     <!--TODO redirect-->
-    <div class="home" onclick="window.location.href = 'resume.html'">
+    <div class="home" onclick="window.location.href = '../Home/index.html'">
         <p>HOME</p>
     </div>
     <!--TODO redirect-->
@@ -34,7 +34,8 @@
         <img alt="checkout"
              onmouseenter="TAppear('checkout')"
              onmouseleave="TDisappear('checkout')"
-             src="https://img.icons8.com/carbon-copy/100/2B2B2B/checkout.png"/>
+                src="https://img.icons8.com/ios-glyphs/128/000000/checkout.png"/>
+        <p id="count" ></p>
     </div>
 </div>
 <div id="containerProduct">
@@ -66,5 +67,6 @@
     <p id="credit"><a href="https://github.com/MAXIMUSSCORP/">© Mohammad Zaid Khan</a></p>
 </footer>
 <script src="productDetails.js"></script>
+<script src="../Home/nav-bar.js"></script>
 </body>
 </html>
