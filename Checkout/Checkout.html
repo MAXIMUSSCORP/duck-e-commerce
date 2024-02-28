@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Page</title>
+</head>
+<link href="../StyleSheets/nav-bar.css" rel="stylesheet">
+<link href="../StyleSheets/checkout.css" rel="stylesheet">
+<link href="../StyleSheets/footer.css" rel="stylesheet">
+<body>
+<div class="navBar">
+    <div class="name" onclick="window.location.href = '../Home/index.html'">
+        <h1>DUCK STORE</h1>
+    </div>
+    <div class="home" onclick="window.location.href = '../Home/index.html'">
+        <p>HOME</p>
+    </div>
+    <div class="about">
+        <p>ABOUT</p>
+    </div>
+    <div class="shop"
+         onclick="">
+        <p>SHOP</p>
+    </div>
+    <div class="contact">
+        <p>CONTACT</p>
+    </div>
+    <div class="right-content">
+        <p id="checkout" style="opacity: 0; transition: opacity 1s ease;">Checkout?</p>
+        <img alt="checkout"
+             onmouseenter="TAppear('checkout')"
+             onmouseleave="TDisappear('checkout')"
+             src="https://img.icons8.com/ios-glyphs/128/000000/checkout.png"/>
+        <p id="count" ></p>
+    </div>
+</div>
+<div id="containerCheckout">
+    <!-- JS rendered code -->
+</div>
+<footer>
+    <section>
+        <article>
+            <h3>online store</h3>
+            <p>limited edition duckys</p>
+            <p>original set duckys</p>
+            <p>partnered set duckys</p>
+        </article>
+        <article>
+            <h3>helpful links</h3>
+            <p>home</p>
+            <p>about</p>
+            <p>shop</p>
+            <p>contact</p>
+        </article>
+        <article>
+            <h3>address</h3>
+            <p>Trash Can</p>
+            <p>Trash Can</p>
+            <p>Trash Can</p>
+        </article>
+    </section>
+</footer>
+<script src="checkout.js"></script>
+<script src="../Home/nav-bar.js"></script>
+</body>
+</html>
