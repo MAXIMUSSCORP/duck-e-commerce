@@ -14,7 +14,7 @@ function TDisappear(elementId) {
     document.getElementById(elementId).style.opacity = '0';
 }
 
-
+document.addEventListener('DOMContentLoaded', checkoutCounter);
 function checkoutCounter() {
     console.log("checkoutCounter");
     let count
@@ -22,6 +22,7 @@ function checkoutCounter() {
         count = parseInt(localStorage.getItem('counter'), 10);
     } else {
         count = 0;
+        localStorage.setItem('counter', count);
     }
     console.log("count: " + count);
     let checkout = document.getElementById("count");
