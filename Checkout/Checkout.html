@@ -5,7 +5,7 @@
     <title>Checkout Page</title>
 </head>
 <link href="../StyleSheets/nav-bar.css" rel="stylesheet">
-<link href="../StyleSheets/checkout.css" rel="stylesheet">
+<link href="../StyleSheets/Checkout.css" rel="stylesheet">
 <link href="../StyleSheets/footer.css" rel="stylesheet">
 <body>
 <div class="navBar">
@@ -15,9 +15,11 @@
     <div class="home" onclick="window.location.href = '../Home/index.html'">
         <p>HOME</p>
     </div>
+    <!--TODO redirect-->
     <div class="about">
         <p>ABOUT</p>
     </div>
+    <!--TODO redirect-->
     <div class="shop"
          onclick="">
         <p>SHOP</p>
@@ -25,7 +27,7 @@
     <div class="contact">
         <p>CONTACT</p>
     </div>
-    <div class="right-content">
+    <div class="right-content" onclick="window.location.href = '../Checkout/Checkout.html'">
         <p id="checkout" style="opacity: 0; transition: opacity 1s ease;">Checkout?</p>
         <img alt="checkout"
              onmouseenter="TAppear('checkout')"
@@ -34,9 +36,17 @@
         <p id="count" ></p>
     </div>
 </div>
-<div id="containerCheckout">
-    <!-- JS rendered code -->
+<div id="placeHolder"></div>
+<div id="cartPageContainer">
+    <div id="cartContainer">
+        <!-- Cart items will be dynamically inserted here -->
+    </div>
+    <div class="cart-summary">
+        <p id="totalCost">Total Cost: $0.00</p>
+        <button id="checkoutButton">Checkout</button>
+    </div>
 </div>
+
 <footer>
     <section>
         <article>
@@ -60,7 +70,7 @@
         </article>
     </section>
 </footer>
-<script src="checkout.js"></script>
+<script src="Checkout.js"></script>
 <script src="../Home/nav-bar.js"></script>
 </body>
 </html>
