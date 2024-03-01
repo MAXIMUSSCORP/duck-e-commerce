@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 function getQueryParam() {
     id = new URL(window.location.href).search.substring(1);
+    return id;
 }
 
 function dynamicContentDetails(ob) {
@@ -84,28 +85,22 @@ function dynamicContentDetails(ob) {
 let containerProduct = document.getElementById('containerProduct')
 
 // BACKEND CALLING
-let httpRequest = new XMLHttpRequest();
-
-httpRequest.onreadystatechange = function() {
-    let contentTitle;
-    if (this.readyState === 4) {
-        if (this.status === 200) {
-            console.log('call successful');
-            contentTitle = JSON.parse(this.responseText);
-
-            console.log(contentTitle);
-            containerProduct.appendChild(
-                dynamicContentDetails(contentTitle)
-            );
-        } else {
-            console.log("call failed!");
-        }
-    }
-};
-
-
-document.addEventListener('DOMContentLoaded', getQueryParam);
 document.addEventListener('DOMContentLoaded', function() {
-    httpRequest.open('GET', 'https://65d7915c27d9a3bc1d7b5403.mockapi.io/products/'+id, true);
-    httpRequest.send();
+    // Assuming 'id' is obtained similarly as in your XMLHttpRequest example
+    const id = getQueryParam(); // Placeholder function to obtain 'id'
+
+    fetch(`https://65d7915c27d9a3bc1d7b5403.mockapi.io/products/${id}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(product => {
+            console.log('call successful', product);
+            containerProduct.appendChild(dynamicContentDetails(product));
+        })
+        .catch(error => {
+            console.error('Fetch error:', error.message);
+        });
 });
