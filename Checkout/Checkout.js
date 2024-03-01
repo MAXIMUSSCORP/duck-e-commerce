@@ -97,8 +97,5 @@ function updateTotalCost() {
 
 // Call updateTotalCost to initially set the total cost
 document.addEventListener('DOMContentLoaded', () => {
-    // Existing code for fetching and displaying cart items...
-
-    // Update total cost on page load
     updateTotalCost();
 });
